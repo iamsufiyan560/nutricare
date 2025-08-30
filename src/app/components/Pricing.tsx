@@ -46,7 +46,7 @@ const Pricing = () => {
         "Monthly in-person/video consultations",
         "Family meal planning",
         "Special occasion guidance",
-        "24/7 WhatsApp support",
+        "9-6 WhatsApp support",
         "Free health assessments",
       ],
       isPopular: false,

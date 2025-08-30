@@ -6,12 +6,12 @@ import { ToastContainer } from "react-toastify";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "NutriCare - Personalized Diet Plans That Work for You",
+  title: "Nutrilifestylehub - Personalized Diet Plans That Work for You",
   description:
     "Transform your health with customized nutrition plans designed for your lifestyle. Professional dietician services with sustainable weight management and long-term results.",
   keywords:
     "dietician, nutritionist, diet plans, weight loss, healthy eating, nutrition counseling, Mumbai",
-  authors: [{ name: "NutriCare" }],
+  authors: [{ name: "Nutrilifestylehub" }],
 
   icons: {
     icon: [
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   manifest: "/site.webmanifest",
 
   openGraph: {
-    title: "NutriCare - Personalized Diet Plans That Work for You",
+    title: "Nutrilifestylehub - Personalized Diet Plans That Work for You",
     description:
       "Professional nutrition guidance for sustainable health transformation",
     type: "website",

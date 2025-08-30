@@ -398,13 +398,13 @@ const Testimonials = () => {
 
             <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
               <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <div className="text-purple-600 font-bold text-lg">24/7</div>
+                <div className="text-purple-600 font-bold text-lg">9-6</div>
               </div>
               <h3 className="font-semibold text-gray-900 mb-2">
-                Ongoing Support
+                Dedicated Support
               </h3>
               <p className="text-sm text-gray-600">
-                Continuous guidance throughout your transformation journey
+                Available during business hours to assist you
               </p>
             </div>
           </div>

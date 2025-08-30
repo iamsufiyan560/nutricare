@@ -52,7 +52,7 @@ const Navbar = () => {
             {/* Logo */}
             <div className="flex-shrink-0">
               <h2 className="text-xl md:text-2xl font-bold text-green-600">
-                NutriCare
+                Nutrilifestylehub
               </h2>
             </div>
 

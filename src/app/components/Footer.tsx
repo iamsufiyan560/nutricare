@@ -11,7 +11,7 @@ import {
   CheckCircle,
   AlertCircle,
 } from "lucide-react";
-import { mail, phone } from "../data";
+import { mail, name, phone } from "../data";
 import { useState } from "react";
 import { toast } from "react-toastify";
 
@@ -32,19 +32,19 @@ const Footer = () => {
     },
     // {
     //   icon: <Facebook className="w-5 h-5" />,
-    //   href: "https://www.facebook.com/nutricare",
+    //   href: "https://www.facebook.com/Nutrilifestylehub",
     //   label: "Facebook",
     //   gradient: "from-blue-600 to-blue-500",
     // },
     // {
     //   icon: <Twitter className="w-5 h-5" />,
-    //   href: "https://www.twitter.com/nutricare",
+    //   href: "https://www.twitter.com/Nutrilifestylehub",
     //   label: "Twitter",
     //   gradient: "from-sky-500 to-blue-500",
     // },
     // {
     //   icon: <Youtube className="w-5 h-5" />,
-    //   href: "https://www.youtube.com/nutricare",
+    //   href: "https://www.youtube.com/Nutrilifestylehub",
     //   label: "YouTube",
     //   gradient: "from-red-600 to-red-500",
     // },
@@ -131,9 +131,9 @@ const Footer = () => {
           <div className="lg:col-span-1 space-y-6">
             <div>
               <h3 className="text-3xl font-bold bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent mb-4">
-                NutriCare
+                Nutrilifestylehub
               </h3>
-              <h4 className="text-xl text-white mb-4">Dr. Afreen Choudhary</h4>
+              <h4 className="text-xl text-white mb-4">{name}</h4>
               <p className="text-gray-300 leading-relaxed">
                 Transforming lives through personalized nutrition and
                 sustainable lifestyle changes. Your journey to better health
@@ -289,7 +289,8 @@ const Footer = () => {
             {/* Copyright */}
             <div className="text-center md:text-left">
               <p className="text-gray-400 text-sm flex items-center justify-center md:justify-start">
-                © {currentYear} NutriCare. All rights reserved. Made with
+                © {currentYear} Nutrilifestylehub. All rights reserved. Made
+                with
                 <Heart className="w-4 h-4 mx-2 text-red-500 fill-current animate-pulse" />
                 for healthier lives.
               </p>

@@ -186,9 +186,7 @@ const About = () => {
               <div className="w-16 h-16 bg-gradient-to-br from-violet-500 to-purple-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                 <Heart className="w-8 h-8 text-white" />
               </div>
-              <div className="text-3xl font-bold text-violet-600 mb-2">
-                24/7
-              </div>
+              <div className="text-3xl font-bold text-violet-600 mb-2">9-6</div>
               <p className="text-gray-600 font-medium">Support Available</p>
             </div>
           </div>
