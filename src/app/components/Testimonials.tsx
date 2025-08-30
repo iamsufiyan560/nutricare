@@ -169,6 +169,7 @@
 // app/components/Testimonials.tsx
 "use client";
 import { Star, Quote } from "lucide-react";
+import { clients } from "../data";
 
 const Testimonials = () => {
   // Testimonials data - dynamic array for easy editing
@@ -340,7 +341,7 @@ const Testimonials = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="group">
               <div className="text-4xl font-bold mb-2 group-hover:scale-110 transition-transform duration-300">
-                500+
+                {clients}+
               </div>
               <p className="text-green-100 font-medium">Success Stories</p>
             </div>
@@ -378,7 +379,8 @@ const Testimonials = () => {
                 Proven Results
               </h3>
               <p className="text-sm text-gray-600">
-                Over 500 successful transformations with measurable outcomes
+                Over {clients} successful transformations with measurable
+                outcomes
               </p>
             </div>
 

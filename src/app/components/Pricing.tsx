@@ -76,7 +76,7 @@ const Pricing = () => {
         </div>
 
         {/* Pricing Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-8 max-w-6xl mx-auto gap-12">
           {pricingPlans.map((plan, index) => (
             <div
               key={index}
@@ -137,9 +137,10 @@ const Pricing = () => {
         {/* Additional Info */}
         <div className="text-center mt-12">
           <p className="text-gray-600 mb-4">
-            All plans include a 7-day money-back guarantee. No contracts, cancel
-            anytime.
+            Every plan starts with a full month of diet guidance. No contracts —
+            cancel future months anytime.
           </p>
+
           <p className="text-sm text-gray-500">
             Prices are in Indian Rupees (INR). Payment plans available for
             quarterly and yearly subscriptions.

@@ -1,5 +1,6 @@
 // app/components/About.tsx
 import { Heart, Target, TrendingUp, Award, Users, Clock } from "lucide-react";
+import { clients, name, yoe } from "../data";
 
 const About = () => {
   // About highlights data - dynamic array for easy editing
@@ -27,14 +28,14 @@ const About = () => {
     },
   ];
 
-  const yoe = 8; // years of experience
-  const clients = 50; // number of clients
-
   const certifications = [
-    { icon: <Award className="w-5 h-5" />, text: "M.Sc. Clinical Nutrition" },
+    {
+      icon: <Award className="w-5 h-5" />,
+      text: "M.Sc. Dietetics & Food nutrition",
+    },
     {
       icon: <Users className="w-5 h-5" />,
-      text: "Certified Diabetes Educator",
+      text: "Certified Food nutrition",
     },
     {
       icon: <Target className="w-5 h-5" />,
@@ -58,7 +59,7 @@ const About = () => {
         <div className="text-center mb-16">
           <div className="inline-flex items-center px-4 py-2 bg-green-100 rounded-full mb-4">
             <span className="text-sm font-medium text-green-800">
-              Meet Dr. Afreen Choudhary
+              Meet {name}
             </span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">

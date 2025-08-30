@@ -1,6 +1,7 @@
 // app/components/Hero.tsx
 "use client";
 import { ArrowRight } from "lucide-react";
+import { name } from "../data";
 
 const Hero = () => {
   const scrollToContact = () => {
@@ -13,7 +14,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50 pt-16"
+      className=" bg-gradient-to-br from-green-50 to-blue-50 pt-16"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
         <div className="text-center">
@@ -24,9 +25,7 @@ const Hero = () => {
           </h1>
 
           {/* Name */}
-          <p className="text-2xl text-gray-800 font-medium mb-4">
-            Dr. Afreen Choudhary
-          </p>
+          <p className="text-2xl text-gray-800 font-medium mb-4">{name}</p>
 
           {/* Subheading */}
           <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">

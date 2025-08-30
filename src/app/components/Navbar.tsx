@@ -46,7 +46,7 @@ const Navbar = () => {
   return (
     <>
       {/* Top Navbar */}
-      <nav className="fixed top-0 w-full bg-white shadow-sm z-50 border-b border-gray-100">
+      <nav className="fixed top-0 w-full mx-auto max-w-[1700px] bg-white shadow-sm z-50 border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-6">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
@@ -98,6 +98,7 @@ const Navbar = () => {
 
             return (
               <button
+                title={link.label}
                 key={link.href}
                 onClick={() => scrollToSection(link.href)}
                 className={`flex flex-col items-center justify-center p-3 transition-all duration-200
@@ -107,7 +108,9 @@ const Navbar = () => {
                   size={20}
                   className={isActive ? "stroke-2" : "stroke-1.5"}
                 />
-                <span className="text-xs mt-1 font-medium">{link.label}</span>
+                <span className="max-[375px]:hidden text-xs mt-1 font-medium">
+                  {link.label}
+                </span>
               </button>
             );
           })}

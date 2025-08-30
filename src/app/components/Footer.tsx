@@ -7,35 +7,47 @@ import {
   Youtube,
   Heart,
   Mail,
+  Linkedin,
+  CheckCircle,
+  AlertCircle,
 } from "lucide-react";
+import { mail, phone } from "../data";
+import { useState } from "react";
+import { toast } from "react-toastify";
 
 const Footer = () => {
   // Social media links data
   const socialLinks = [
     {
       icon: <Instagram className="w-5 h-5" />,
-      href: "https://www.instagram.com/nutricare",
+      href: "https://www.instagram.com/nutrilifestylehub?igsh=MThtd2EyMW9zeGMzbQ==",
       label: "Instagram",
       gradient: "from-pink-500 to-rose-500",
     },
     {
-      icon: <Facebook className="w-5 h-5" />,
-      href: "https://www.facebook.com/nutricare",
-      label: "Facebook",
+      icon: <Linkedin className="w-5 h-5" />,
+      href: "https://www.linkedin.com/in/afreen-choudhary-703986301?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B0NWJuVYmQQu1U0%2FHbnzI7A%3D%3D",
+      label: "LinkedIn",
       gradient: "from-blue-600 to-blue-500",
     },
-    {
-      icon: <Twitter className="w-5 h-5" />,
-      href: "https://www.twitter.com/nutricare",
-      label: "Twitter",
-      gradient: "from-sky-500 to-blue-500",
-    },
-    {
-      icon: <Youtube className="w-5 h-5" />,
-      href: "https://www.youtube.com/nutricare",
-      label: "YouTube",
-      gradient: "from-red-600 to-red-500",
-    },
+    // {
+    //   icon: <Facebook className="w-5 h-5" />,
+    //   href: "https://www.facebook.com/nutricare",
+    //   label: "Facebook",
+    //   gradient: "from-blue-600 to-blue-500",
+    // },
+    // {
+    //   icon: <Twitter className="w-5 h-5" />,
+    //   href: "https://www.twitter.com/nutricare",
+    //   label: "Twitter",
+    //   gradient: "from-sky-500 to-blue-500",
+    // },
+    // {
+    //   icon: <Youtube className="w-5 h-5" />,
+    //   href: "https://www.youtube.com/nutricare",
+    //   label: "YouTube",
+    //   gradient: "from-red-600 to-red-500",
+    // },
   ];
 
   // Quick links data
@@ -65,6 +77,44 @@ const Footer = () => {
   };
 
   const currentYear = new Date().getFullYear();
+
+  const [email, setEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(e.target.value);
+  };
+
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch(
+        "https://formsubmit.co/msufiyanhusen@gmail.com",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            email,
+            _subject: "New Newsletter Subscription",
+            _captcha: "false",
+          }),
+        }
+      );
+
+      if (response.ok) {
+        toast.success("Subscription successful! 🎉");
+        setEmail("");
+      } else {
+        toast.error("Oops! Something went wrong.");
+      }
+    } catch {
+      toast.error("Subscription failed. Try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <footer className="bg-gray-900 text-white relative overflow-hidden">
@@ -158,20 +208,31 @@ const Footer = () => {
                 Contact Info
               </h4>
               <div className="space-y-4 text-gray-300">
+                {/* Email */}
                 <div className="flex items-center group">
                   <Mail className="w-4 h-4 mr-3 text-green-400 group-hover:scale-110 transition-transform duration-300" />
-                  <span className="group-hover:text-white transition-colors duration-300">
-                    hello@nutricare.com
-                  </span>
+                  <a
+                    href={`mailto:${mail}`}
+                    className="group-hover:text-white transition-colors duration-300"
+                  >
+                    {mail}
+                  </a>
                 </div>
+
+                {/* Phone */}
                 <div className="flex items-center group">
                   <div className="w-4 h-4 mr-3 text-blue-400 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                     📞
                   </div>
-                  <span className="group-hover:text-white transition-colors duration-300">
-                    +91 98765 43210
-                  </span>
+                  <a
+                    href={`tel:${phone}`}
+                    className="group-hover:text-white transition-colors duration-300"
+                  >
+                    {phone}
+                  </a>
                 </div>
+
+                {/* Location */}
                 <div className="flex items-center group">
                   <div className="w-4 h-4 mr-3 text-purple-400 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                     📍
@@ -180,6 +241,8 @@ const Footer = () => {
                     Mumbai, Maharashtra
                   </span>
                 </div>
+
+                {/* Hours */}
                 <div className="flex items-center group">
                   <div className="w-4 h-4 mr-3 text-orange-400 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                     🕒
@@ -199,16 +262,23 @@ const Footer = () => {
               <p className="text-gray-300 text-sm mb-4">
                 Get nutrition tips & healthy recipes delivered to your inbox
               </p>
-              <div className="flex flex-col  gap-3">
+              <form onSubmit={handleSubscribe} className="flex flex-col gap-3">
                 <input
                   type="email"
                   placeholder="Enter your email"
+                  value={email}
+                  onChange={handleInputChange}
+                  required
                   className="flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-sm text-white placeholder-gray-400 focus:outline-none focus:border-green-400 focus:bg-white/20 transition-all duration-300 backdrop-blur-sm"
                 />
-                <button className="px-6 py-3 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 rounded-xl transition-all duration-300 text-sm font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 whitespace-nowrap">
-                  Subscribe
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="px-6 py-3 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 rounded-xl transition-all duration-300 text-sm font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 whitespace-nowrap disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {isSubmitting ? "Submitting..." : "Subscribe"}
                 </button>
-              </div>
+              </form>
             </div>
           </div>
         </div>
@@ -253,7 +323,7 @@ const Footer = () => {
         </div>
 
         {/* Additional Info */}
-        <div className="text-center mt-8 pt-8 border-t border-gray-800">
+        <div className="text-center mt-8 pt-8 pb-20 md:pb-0 border-t border-gray-800">
           <p className="text-xs text-gray-500 max-w-4xl mx-auto leading-relaxed">
             Professional nutrition guidance provided for informational and
             educational purposes. Always consult with your healthcare provider
